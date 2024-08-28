@@ -1,2 +1,3 @@
-milfrance is cute 
-dave is my first love
+lee is leebat 
+lee loves dave
+milfrance d maasi-asi dyosa kasi
