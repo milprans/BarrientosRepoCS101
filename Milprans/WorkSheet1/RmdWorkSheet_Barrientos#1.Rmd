@@ -91,9 +91,26 @@ sum_value
 ```
 8.5
 ```{r}
-sequence <- (1, 1000)
-print (sequence)
+# 8.1 Integers from 1 to 100
+integers_1_to_100 <- 1:100
+print(integers_1_to_100)
+
+# 8.2 Numbers from 20 to 60
+numbers_20_to_60 <- 20:60
+print(numbers_20_to_60)
+
+# 8.3 Mean of numbers from 20 to 60
+mean_20_to_60 <- mean(numbers_20_to_60)
+print(mean_20_to_60)
+
+# 8.4 Sum of numbers from 51 to 91
+numbers_51_to_91 <- 51:91
+sum_51_to_91 <- sum(numbers_51_to_91)
+print(sum_51_to_91)
+
 ```
+
+
 9.
 ```{r}
 filter <- Filter(function(i) { all(i %% c(3, 5, 7) != 0) }, seq(1, 100))
@@ -107,9 +124,38 @@ print (sequence_backwards)
 ```
 11. 
 ```{r}
+multiples <- Filter(function(i) { i %% 3 == 0 || i %% 5 == 0 }, seq(1, 24))
+sum_multiples <- sum(multiples)
 
-
+multiples
+sum_multiples
 ```
+12. 
+## The statement will not immediately print it because the expression is incomplete.
+
+13.
+```{r}
+score <- c(72, 86, 92, 63, 88, 89, 91, 92, 75, 75, 77)
+x2 <- score[2]
+x3 <- score[3]
+print(x2)
+print(x3)
+```
+14. 
+```{r}
+
+``` 
+15. 
+```{r}
+name = readline(prompt="Input your name: ")
+age = readline(prompt="Input your age: ")
+print(paste("My name is", name, "and I am", age, "years old."))
+print(R.version.string)
+```
+
+
+
+
 
 
 
