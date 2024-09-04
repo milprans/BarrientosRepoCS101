@@ -30,7 +30,7 @@ new_age <- c(age,0,age)
 print (new_age)
 
 ```
-What Happen to the new_age?
+## What Happen to the new_age?
 
 4
 ```{r}
@@ -62,7 +62,7 @@ data <- c(2.4, 2.8, 2.1, 2.5, 2.4, 2.2, 2.5,
 data <- data * 2
 print (data)
 ```
-#What Happen to the Data?
+## What Happen to the Data?
  - the value of the data is doubled.
  
  8.1
@@ -73,10 +73,23 @@ print (sequence)
 ```
 8.2
 ```{r}
-sequence <- seq (20,60)
+sequence <- seq (20, 60)
 
 print (sequence)
 ```
+8.3 
+```{r}
+sequence <- seq (20, 60)
+mean_value <- mean(sequence)
+mean_value 
+
+```
+```{r}
+sequence <- seq (51, 91)
+sum_value <- sum(sequence)
+sum_value
+```
+
 
  
  
