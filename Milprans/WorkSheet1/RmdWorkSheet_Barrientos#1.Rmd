@@ -52,10 +52,34 @@ data <- c(2.4, 2.8, 2.1, 2.5, 2.4, 2.2, 2.5,
           2.3, 2.5, 2.3, 2.4, 2.7)
 print(data)
 
+
+length(data)
 ```
+
 ```{r}
+data <- c(2.4, 2.8, 2.1, 2.5, 2.4, 2.2, 2.5,
+          2.3, 2.5, 2.3, 2.4, 2.7)
+data <- data * 2
+print (data)
+```
+#What Happen to the Data?
+ - the value of the data is doubled.
+ 
+ 8.1
+```{r}
+sequence <- seq (1,100)
+print (sequence)
 
 ```
+8.2
+```{r}
+sequence <- seq (20,60)
+
+print (sequence)
+```
+
+ 
+ 
 
 
 
