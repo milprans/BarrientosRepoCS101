@@ -30,7 +30,8 @@ new_age <- c(age,0,age)
 print (new_age)
 
 ```
-## What Happen to the new_age?
+## What Happen to the new_age? 
+  - In new_age, you will see the original age values, followed by a 0, and then the same age values again.
 
 4
 ```{r}
@@ -91,22 +92,67 @@ sum_value
 ```
 8.5
 ```{r}
-# 8.1 Integers from 1 to 100
+# 8.1 
 integers_1_to_100 <- 1:100
 print(integers_1_to_100)
 
-# 8.2 Numbers from 20 to 60
+# 8.2 
 numbers_20_to_60 <- 20:60
 print(numbers_20_to_60)
 
-# 8.3 Mean of numbers from 20 to 60
+# 8.3 
 mean_20_to_60 <- mean(numbers_20_to_60)
 print(mean_20_to_60)
 
-# 8.4 Sum of numbers from 51 to 91
+# 8.4 
 numbers_51_to_91 <- 51:91
 sum_51_to_91 <- sum(numbers_51_to_91)
 print(sum_51_to_91)
+
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+
+# B. 8.1 Generates data from 1 - 100
+data <- 1:1000
+length(data)  
+
+# 8.2 Filter even numbers
+even_data <- data[data %% 2 == 0]
+length(even_data)  
+
+# 8.3 Filter numbers greater than 500
+greater_than_500 <- data[data > 500]
+length(greater_than_500)  
+
+# 8.4 Sum of numbers less than 100
+sum_less_than_100 <- sum(data[data < 100])
+sum_less_than_100
+
+# C. 
+# 8.1 
+data_8_1 <- 1:100
+length(data_8_1)  # Number of data points
+
+# 8.2 
+data_8_2 <- 20:60
+length(data_8_2)  # Number of data points
+
+# 
+mean_8_3 <- mean(data_8_2)
+mean_8_3
+
+# 8.4 
+data_8_4 <- 51:91
+sum_8_4 <- sum(data_8_4)
+sum_8_4
+
 
 ```
 
@@ -143,6 +189,13 @@ print(x3)
 ```
 14. 
 ```{r}
+# A
+a <- c(1, 2, NA, 4, NA, 6, 7)
+
+print(a, na.print="-999")
+# B
+
+# The -999 is not actually changing the vector a it's just a way to represent NA values during the print operation.
 
 ``` 
 15. 
