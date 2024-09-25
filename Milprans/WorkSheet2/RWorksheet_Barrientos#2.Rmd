@@ -108,51 +108,68 @@ print(data)
 ```
 8.
 ```{r}
-# The table below gives the 25 most powerful celebrities and their annual pay as ranked by the editions of Forbes magazine and as listed on the Forbes.com website.
-#a. Create vectors according to the above table. Write the R scripts and its output.
+# a. Create vectors
 power_ranking <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25)
+celebrity_name <- c("Tom Cruise", "Rolling Stones", "Ophrah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", 
+                    "Cast of Desperate Housewives", "Dan Brown", "Bruuce Springsteen", "Donald Trump", "Muhammad Ali","Paul McCartney", 
+                    "George Lucas", "Elthon John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Brad Pitt", "Peter Jackson", 
+                    "Dr. Phil McGraw", "Jay Leno", "Celine Dion", "Koby Bryant")
+pay <- c(67, 90, 225, 110, 87, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
 
-celebrity_name <- c("Tom Cruise", "Rolling Stones", "Ophrah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of Desperate Housewives", "Dan Brown", "Bruuce Springsteen", "Donald Trump", "Muhammad Ali","Paul McCartney", "George Lucas", "Elthon John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Brad Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Leno", "Celine Dion", "Koby Bryant")
 
-pay <- c(67,90, 225, 110, 87, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
-print(power_ranking)
-print(celebrity_name)
-print(pay)
+power_ranking_data <- data.frame(Power_Ranking = power_ranking, Celebrity_Name = celebrity_name, Pay_Millions = pay)
 
-#b. Modify the power ranking and pay of J.K. Rowling. Change power ranking to 15 and pay to 90. Write the R scripts and its output.
-power_ranking[19] <- 15
-pay [19] <- 90
-
-# c. Create an excel file from the table above and save it as csv file(PowerRanking). Import the csv file into the RStudio. What is the R script?
-write.csv(data.frame(power_ranking, celebrity_name, pay), "PowerRanking.csv")
-power_ranking_data <- read.csv("PowerRanking.csv")
+# Print the data frame
 print(power_ranking_data)
 
-#d. Access the rows 10 to 20 and save it as Ranks.RData.    Write the R script and its output. 
-selected_ranks <- power_ranking_data[10:20, ]
-save(selected_ranks, file = "Ranks.RData")  
-print(selected_ranks)  
+# b. Modify J.K. Rowling's power ranking and pay
+power_ranking_data$Power_Ranking[19] <- 15
+power_ranking_data$Pay_Millions[19] <- 90
 
-#e. Describe its output.
-# - The output is the data of the 10th to 20th row of the data frame.
+
+print(power_ranking_data)
+
+# d. Access rows 10 to 20 and save them as Ranks.RData
+selected_ranks <- power_ranking_data[10:20, ]
+save(selected_ranks, file = "Ranks.RData")
+
+print(selected_ranks)
+
+
 ```
+
+```{r}
+# c. Create an excel file from the table above and save it as csv file(PowerRanking). Import the csv file into the RStudio. What is the R script?
+library(readxl)
+data <- read_excel("C:/PROJ/Celebrity_Pay_with_Ranking.xlsx")
+write.csv(data, "C:/PROJ/Celebrity_Pay_with_Ranking.csv")
+View(data)
+```
+
 
 9.
 ```{r}
 #a. Import the excel file into your RStudio. What is the R script?
 library(readxl)
 hotel_v <- read_excel("C:/PROJ/hotels-vienna.xlsx")
-print(hotel_v)
+View(hotel_v)
 #b.How many dimensions does the dataset have? What is the R script? What is its output?
 
 dim(hotel_v)
 # - The dataset has 3 dimensions.
 
 #c. Select columns country, neighbourhood, price, stars, accomodation_type, and ratings. Write the R script.
-
+ selected_col <- data.frame(
+  country = hotel_v$Country,
+  neighbourhood = hotel_v$Neighbourhood,
+  price = hotel_v$Price,
+  stars = hotel_v$Stars,
+  accomodation_Type = hotel_v$Accomodation_Type,
+  ratings = hotel_v$Ratings)
 
 #d. Save the data as **new.RData to your RStudio. Write the     R script. 
 save(hotel_v, file = "new.RData")
+
 
 #e.Display the first six rows and last six rows of the new RData. What is the R script?
 head(hotel_v)
