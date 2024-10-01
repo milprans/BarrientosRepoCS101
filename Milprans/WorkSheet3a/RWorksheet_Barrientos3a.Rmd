@@ -1,0 +1,23 @@
+---
+title: "RWorkSheet_Barrientos#3a"
+author: "Barrientos, Milfrance D"
+date: "2024-10-01"
+output: pdf_document
+---
+
+```{r}
+#Using Vectors 
+# 1. There is a built-in vector LETTERS contains the uppercase letters of the alphabet and letters which contains the lowercase letters of the alphabet.
+letters <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+# a. You need to produce a vector that contains the first 11 letters.
+
+letters[1:11]
+
+# b. Produce a vector that contains the odd numbered letters.
+letters[seq(1,26,2)]
+```
+```{r}
+# b. Produce a vector that contains the odd numbered letters.
+letters[seq(1,26,2)]
+```
+
