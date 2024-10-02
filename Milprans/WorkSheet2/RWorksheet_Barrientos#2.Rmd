@@ -107,11 +107,8 @@ weighted.mean(diesel_data$Price_per_Liter,diesel_data$Purchase_Quantity)
 ```
 
 
-```{r}
-```
+
 7.
-```{r}
-```
 
 
 ```{r}
