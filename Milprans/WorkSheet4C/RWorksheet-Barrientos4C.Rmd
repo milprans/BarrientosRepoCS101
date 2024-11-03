@@ -1,0 +1,21 @@
+---
+title : Rworksheet_Barrientos#4C
+author: "Barrientos, Milfrance D."
+date: "11/03/2024"
+output: pdf_document
+---
+```{r}
+#1. Use the dataset mpg
+library(ggplot2)
+library(dplyr)
+data(mpg)
+mpg
+
+
+#a. Show your solutions on how to import a csv file into the environment.
+#install.packages("readr")
+library(readr)
+data <- read_csv("C:/PROJ/mpg.csv", show_col_types = FALSE)
+data
+```
+
