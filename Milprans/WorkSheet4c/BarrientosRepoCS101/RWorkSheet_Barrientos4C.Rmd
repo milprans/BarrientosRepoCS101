@@ -7,19 +7,17 @@ output: pdf_document
 ```{r}
 #1. Use the dataset mpg
 
-
 #a. Show your solutions on how to import a csv file into the environment.
-install.packages("readr")
+# Ensure that readr is installed separately, then load it
 library(readr)
 data <- read_csv("C:/PROJ/mpg.csv", show_col_types = FALSE)
 data
 
 #b. Which variables from mpg dataset are categorical?
-
-#the variables from mpg dataset that are categorical are manufacturer, model,transmission, drv, fl, class.
+# The variables from mpg dataset that are categorical are manufacturer, model, transmission, drv, fl, class.
 
 #c. Which are continuous variables?
-#the continuous variables are displ, year, cyl, cty, hwy.
+# The continuous variables are displ, year, cyl, cty, hwy.
 
 #2. Which manufacturer has the most models in this data set? Which model has the most variations?
 # Show your answer.
@@ -34,7 +32,7 @@ manufacturer_models <- mpg %>%
 
 manufacturer_most_models <- manufacturer_models %>% slice(1)
 manufacturer_most_models
-#toyota has the most models with 6 different models in the data set.
+# Toyota has the most models with 6 different models in the data set.
 
 model_variations <- mpg %>%
   group_by(model) %>%
@@ -43,11 +41,9 @@ model_variations <- mpg %>%
 
 model_most_variations <- model_variations %>% slice(1)
 model_most_variations
-#the most variations is the model "caravan 2wd" with 11 variations.
+# The most variations is the model "caravan 2wd" with 11 variations.
 
 #a. Group the manufacturers and find the unique models. Show your codes and result.
-library(dplyr)
-
 manufacturer_unique_models <- data %>%
   group_by(manufacturer) %>%
   summarise(unique_model_count = n_distinct(model))
@@ -56,6 +52,7 @@ manufacturer_unique_models
 
 #b. Graph the result by using plot() and ggplot(). Write the codes and its result.
 
+# Base R barplot
 barplot(
   manufacturer_unique_models$unique_model_count,
   names.arg = manufacturer_unique_models$manufacturer,
@@ -65,8 +62,7 @@ barplot(
   ylab = "Unique Model Count"
 )
 
-#ggplot
-install.packages("ggplot2")
+# ggplot
 library(ggplot2)
 ggplot(manufacturer_unique_models, aes(x = reorder(manufacturer, unique_model_count), y = unique_model_count)) +
   geom_bar(stat = "identity", fill = "red") +
@@ -77,7 +73,9 @@ ggplot(manufacturer_unique_models, aes(x = reorder(manufacturer, unique_model_co
     y = "Unique Model Count"
   ) +
   theme_minimal()
+
 ```
+
 ```{r}
 #2. Same dataset will be used. You are going to show the relationship of the modeland the manufacturer.
 library(dplyr)
