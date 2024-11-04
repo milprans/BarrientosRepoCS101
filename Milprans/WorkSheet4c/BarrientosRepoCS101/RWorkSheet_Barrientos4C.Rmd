@@ -155,17 +155,36 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   )
 #The relationship between displacement and highway MPG in the mpg dataset appears to be negative, as displacement increases, highway MPG decreases.
 
-```
+#5. Plot the relationship between cyl - number of cylinders and displ - engine displacement using
+#geom_point with aesthetic color = engine displacement. Title #should be “Relationship between No. of Cylinders and Engine Displacement”.
 
-```{r}
+
+#a. How would you describe its relationship? Show the codes and its result.
+
 #6. Plot the relationship between displ (engine displacement) and hwy(highway miles per gallon). Mapped
 #it with a continuous variable you have identified in #1-c. What is its result? Why it produced such output?
 
+
+```
+
+```{r}
+
+#6. Import the traffic.csv onto your R environment.
+library(readr)
+data <- read_csv("C:/PROJ/traffic.csv")
+data
+
 #a. How many numbers of observation does it have? What are the variables of the traffic dataset the Show your answer.
+dim(data)
+#The traffic dataset has 48 observations and 3 variables: junction, date, and traffic_volume.
 
 #b. subset the traffic dataset into junctions. What is the R codes and its output?
-
+Junction <- split(data, data$Junction)
+Junction
 #c. Plot each junction in a using geom_line(). Show your solution and output.
+library(ggplot2)
+
+
 
 ```
 ```{r}
